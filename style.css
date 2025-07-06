@@ -208,7 +208,7 @@ body{
         background:#ECEFF1 ;
         flex-direction: column;
         align-items: center;
-        padding: 10px 10px;
+        padding: 20px 12px;
         gap: 5px;
         border-radius: 5%;
       }
@@ -226,20 +226,24 @@ body{
       }
     
       .logo {
-        font-size: 30px;
+        display: none;
       }
 
     .home {
       flex-direction: column;
       align-items: center;
-      padding: 100px 5% 50px; /* 調整上下 padding 避免內容過擠 */
+      padding: 75px 5% 50px; /* 調整上下 padding 避免內容過擠 */
       text-align: center;
     }
   
-    .home-img img {
-      max-width: 70%;
-      margin: 0 auto 10px; /* 圖片底下留一點空間 */
-    }
+    .home-img {
+        margin-top: 30px;
+      }
+    
+      .home-img img {
+        max-width: 80%;
+        margin: 0 auto;
+      }
   
     .home-content h1 {
       font-size: 32px;
