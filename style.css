@@ -205,10 +205,12 @@ body{
 
 @media screen and (max-width: 768px) {
     .header {
+        background:#ECEFF1 ;
         flex-direction: column;
         align-items: center;
         padding: 10px 10px;
-        gap: 10px;
+        gap: 5px;
+        border-radius: 5%;
       }
     
       .navbar {
@@ -236,7 +238,7 @@ body{
   
     .home-img img {
       max-width: 70%;
-      margin: 0 auto 20px; /* 圖片底下留一點空間 */
+      margin: 0 auto 10px; /* 圖片底下留一點空間 */
     }
   
     .home-content h1 {
@@ -244,7 +246,7 @@ body{
     }
   
     .home-content h3 {
-      font-size: 24px;
+      font-size: 20px;
     }
   
     .home-content p {
