@@ -1,16 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans JP', sans-serif;
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  font-family: 'Sora', 'Noto Sans TC', sans-serif;
+  background-image: url(/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg);
+  background-size: cover;           /* ✅ 讓圖片覆蓋整個區域 */
+  background-repeat: no-repeat;     /* ✅ 不要重複 */
+  background-position: center;      /* ✅ 從中間對齊 */
 }
 
-body{
-    background-color: #F5F7FA;
-    color:#222222;
+.section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .header{
@@ -18,53 +35,101 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    height: 80px;
+    padding: 0;
     background: transparent;
     display: flex;
-    justify-content:space-between ;
+    justify-content:center ;
     z-index: 100;
 }
 
-.logo{
-    font-size: 35px;
-    color: #222222;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: default;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
+.navbar {
+    transition: background-color 0.3s ease, border-radius 0.3s ease; /* ✅ 加上 border-radius 過渡動畫 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    gap: 15px;
+    border: none;
+    border-radius: 30px; 
+    height: 40px;
+    width: 80%;
+}
+  
+.navbar:hover{
+    background-color: white;
+    border-radius: 30px;
 }
 
-.navbar a{
-    display: inline-block;
-    font-size: 20px;
-    color: #222222;
+.navbar a {
+    position: relative;  /* 為了定位 ::after */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 70%;
+    font-size: 16px;
     text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
+    padding: 10px;
+    border: none;
+    color: #000000;
+    background-color:transparent;
+    transition: color 0.3s; /* 文字顏色動畫 */
+  
     opacity: 0;
     animation: slideTop .5s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
+  
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}  
+  /* 滑過或是 active 狀態時觸發動畫 */
+.navbar a:hover::after {
+    width: 80%;
+}
+  
 
-.navbar a:hover,
-.navbar a.active{
-    color: #00C6D7;
+.section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.home{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
+#home{
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 70px 10% 0;
 }
 
 .home-content{
-    max-width: 600px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.home-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-content h3{
@@ -76,7 +141,7 @@ body{
 }
 
 .home-content h3:nth-of-type(2){
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: .7s;
@@ -135,6 +200,69 @@ body{
     color: #1f242d;
     box-shadow: 0 0 20px #00C6D7;
 }
+
+#side{
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.side-top{
+    margin-top: 80px;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 20px; /* 格子之間間距 */
+    width: 100%;       /* ✅ 加這行 */
+    margin: 0 20px;         /* ✅ 水平置中整體內容 */
+    height: 65%;
+    padding: 0 20px 0 20px;
+  }
+  
+  .grid-item {
+    width: 75%;
+    background-color: #f2f2f2;
+    padding: 0;
+    margin: 10px 70px 10px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+  }
+
+  .grid-img{
+    border: none;
+    border-radius: 30px;
+    margin-top: 12px;
+    height: 250px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .grid-p{
+    text-align: center;
+    margin: 12px;
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 50%;
+  }
+
+  .grid-img:hover{
+    transform: translateY(-5px) scale(1.03); /* 微微上浮 + 放大 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 加一點陰影讓它更立體 */
+  }
+
 
 @keyframes slideRight{
     0%{
@@ -202,3 +330,81 @@ body{
         transform: translateY(1);
     }
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center;
+        overflow-x: hidden;
+
+      }
+
+    .section {
+        width: 100% !important;
+        scroll-snap-align: none !important; /* ✅ 移除 snap 對齊效果 */
+        display: flex;
+        flex-direction: column; /* ✅ 手機端改為縱向排列 */
+      }
+
+    .header {
+        display: none;
+      }
+    
+      .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+    
+      .navbar a {
+        margin-left: 0;
+        font-size: 16px;
+      }
+    
+      #home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+      }
+
+      .home-content{
+        height: auto;
+        font-size: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        padding-top: auto ;
+        padding-left:20px ;
+        padding-right: 20px;
+      }
+
+      .home-content h3,
+      .home-content h1{
+        font-size: 20px;
+      }
+
+      .home-content p{
+        font-size: 30%;
+      }
+
+      .home-img {
+        width: 500px;       /* ✅ 改為吃滿可用寬度 */
+        height: auto;      /* 或視需求保留高度 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-right: 20px;
+        padding: 0;
+      }
+
+      .home-img img{
+        width: 250px;
+        height: 250px;
+    }
+   
+  }
+  

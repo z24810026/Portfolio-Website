@@ -10,16 +10,15 @@
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">みなみ</a>
         <nav class="navbar">
-            <a href="#" style="--i:1;" class="active">ホーム</a>
-            <a href="#"style="--i:2;">プロフィール</a>
-            <a href="#"style="--i:3;">サイド作品</a>
-            <a href="#"style="--i:4;">システム作品</a>
+            <a href="#home" style="--i:1;">ホーム</a>
+            <a href="#purofiru" style="--i:2;">プロフィール</a>
+            <a href="#side" style="--i:3;">サイド作品</a>
+            <a href="#system" style="--i:4;">システム作品</a>
         </nav>
     </header>
 
-    <section class="home">
+    <div class="section" id="home">
         <div class="home-content">
             <h3>こんにちは、はじめまして</h3>
             <h1>みなみと申します</h1>
@@ -35,11 +34,41 @@
                     <a href="#" style="--i:9"><i class='bx bxl-twitter'></i></a>
                 </div>
         </div>
-
         <div class="home-img">
             <img src="/asset/home.png" alt="">
         </div>
-    </section>
+    </div>
+
+    <div class="section" id="purofiru"></div>
+
+    <div class="section" id="side">
+        <div class="side-top"><h1>作品一覧</h1></div>
+        <div class="side-bottom grid-container">
+            <div class="grid-item">
+                <a href="https://li-rong-webside.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <img class="grid-img" src="/LiRong Logo 1拷貝.png" alt="">
+                </a>
+                <p class="grid-p">LiRong</p>
+            </div>
+            <div class="grid-item">
+                <a href="https://lenz-webside.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <img class="grid-img" src="/LiRong Logo 1拷貝.png" alt="">
+                </a>
+                <p class="grid-p">Lenz</p>
+            </div>
+            <div class="grid-item">
+                <a href="https://webside-demo.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <img class="grid-img" src="/LiRong Logo 1拷貝.png" alt="">
+                </a>
+                <p class="grid-p">Demo</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="system"></div>
+
+    
+
 
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
